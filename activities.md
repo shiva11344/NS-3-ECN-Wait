@@ -5,3 +5,4 @@
           
 ## week2 (24 oct):
            read properly about ns-3 and ran the example scripts.
+           introduction of libraries and tools: https://www.nsnam.org/tutorials/consortium14/ns-3-training-session-1.pdf
