@@ -7,6 +7,8 @@
            . read properly about ns-3 and ran the example scripts 7.
            . read the givenj RFC and understood the concept of ECN.
            
+           NS-3 dev has to be downloaded as the ns-3 3.27 does not have about ecn in its tcp-socketbase.
+           
            
 ## To-Do :
 
