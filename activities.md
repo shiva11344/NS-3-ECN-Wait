@@ -4,5 +4,13 @@
           i.e., pyVIZ is not being enabled in 18.04 . 
           
 ## week2 (24 oct):
-           read properly about ns-3 and ran the example scripts.
-           introduction of libraries and tools: https://www.nsnam.org/tutorials/consortium14/ns-3-training-session-1.pdf
+           . read properly about ns-3 and ran the example scripts 7.
+           . read the givenj RFC and understood the concept of ECN.
+           
+           
+## To-Do :
+
+   1. create a simple topology
+   2. Install Bulk-senedr application on the nodes inorder to create more traffic in the medium
+   3. Enable RED queue model. It supports Classic Ecn. Enable ECN related stuff like ECT(0),ECT(1),2 bits in header of TCP etc.,
+   4. have to note the differences between ECN enabled and disabled . i.e., packets lost when disabled must be same as packets marked when enabled 
