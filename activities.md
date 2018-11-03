@@ -16,3 +16,7 @@
    2. Install Bulk-senedr application on the nodes inorder to create more traffic in the medium
    3. Enable RED queue model. It supports Classic Ecn. Enable ECN related stuff like ECT(0),ECT(1),2 bits in header of TCP etc.,
    4. have to note the differences between ECN enabled and disabled . i.e., packets lost when disabled must be same as packets marked when enabled 
+
+ * enabled pcap and ran a output file on wireshark and got to know about the
+    Ip headers and fields in them of every packet.
+ * studied tcp-socketbase and noted the places where changes to be done reguarding ECN. 
