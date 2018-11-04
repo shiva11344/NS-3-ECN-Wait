@@ -18,11 +18,20 @@
       congestion. 
       The receiver of the packet echoes the congestion indication to the sender, which reduces its transmission 
       rate as if it detected a dropped packet.
-      
+   
       The Negotiation of ECN involves only TCP headers. It is as follows
       
 ![ecn-diagram-1](https://user-images.githubusercontent.com/43876863/47962282-8e9d4380-e040-11e8-93b9-c6b43ac949a0.jpg)
 
+
+### ECN-aware Routers:
+          
+        Explicit Congestion Notification is inherently coupled with the idea of Active Queue Management.The 
+        primary goal of AQM algorithms is to allow network operators simultaneously to achieve high throughput
+        and low average delay by detecting incipient congestion.  This is achieved by sending appropriate 
+        indications to the endpoints before the queue overflows.  However, the method of informing sources of
+        congestion is not limited  to dropping  packets, as is the case with non-AQM-enabled FIFO queues.Instead, 
+        AQM-enabled routers can mark packets during congestion by setting the ECN bit in the packets’ header.
 
 ### ECN operations on IP:
 
