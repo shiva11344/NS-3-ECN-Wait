@@ -8,6 +8,11 @@
       Explicit Congestion Notification (ECN) is an extension to the Internet Protocol and to the Transmission Control Protocol. ECN allows end-to-end notification of network congestion without dropping packets. ECN is an optional feature that may be used between two ECN-enabled endpoints when the underlying network infrastructure also supports it.
 
       Conventionally, TCP/IP networks signal congestion by dropping packets. When ECN is successfully negotiated, an ECN-aware router may set a mark in the IP header instead of dropping a packet in order to signal impending congestion. The receiver of the packet echoes the congestion indication to the sender, which reduces its transmission rate as if it detected a dropped packet.
+      
+      The Negotiation of ECN involves only TCP headers. It is as follows
+      
+![ecn-diagram-1](https://user-images.githubusercontent.com/43876863/47962282-8e9d4380-e040-11e8-93b9-c6b43ac949a0.jpg)
+
 
 ### ECN operations on IP:
 
@@ -45,7 +50,7 @@
  ### WHAT IS ECN+ ??
 
           [RFC3168] specifies setting the ECN-Capable codepoint on TCP data packets, but not on TCP SYN and SYN/ACK packets. 
-           However, because of the high cost to the TCP transfer of having a SYN/ACK packet dropped, with the resulting retransmission timeout, the use of ECN for the SYN/ACK came into existance. 
+           However, because of the high cost to the TCP transfer of having a SYN/ACK packet dropped, with the resulting          retransmission timeout, the use of ECN for the SYN/ACK came into existance. 
            THIS IS ECN+ .
 
 		   The use of ECN for SYN/ACK packets has the following potential
@@ -54,7 +59,8 @@
 		   1) Avoidance of a retransmission timeout;
 
 		   2) Improvement in the throughput of short connections.
-
+		
+	      While the current ECN specification enables congested routers to mark TCP data packets during congestion, this is not the case with TCP control (TCP SYN and SYN ACK) packets.  This is simply because these packets are used initially to negotiate the use of ECN options between the two endpoints. Using ECN+ We can observe devastating effects that this can have on system performance, particularly in AQM-enabled environments dominated by web-traffic.Then we explore possibilities of using ECN bits in the IP headersof TCP control packets.  We demonstrate that marking (instead of dropping) TCP SYN ACK packets, while leaving the treatment of the initial TCP SYN packet unchanged from current practice,can only improve performance without causing a threat for system security or stability.
 
 ### ECN+/WAIT :
 
