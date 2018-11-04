@@ -16,8 +16,8 @@
       Conventionally, TCP/IP networks signal congestion by dropping packets. When ECN is successfully negotiated,
       an ECN-aware router may set a mark in the IP header instead of dropping a packet in order to signal impending 
       congestion. 
-      The receiver of the packet echoes the congestion indication to the sender, which reduces its transmission rate
-      as if it detected a dropped packet.
+      The receiver of the packet echoes the congestion indication to the sender, which reduces its transmission 
+      rate as if it detected a dropped packet.
       
       The Negotiation of ECN involves only TCP headers. It is as follows
       
@@ -69,10 +69,11 @@
 
        Upon receiving an IP packet with the Congestion Experienced code point, the TCP receiver echoes back 
        this congestion indication using the ECE flag in the TCP header. When an endpoint receives a TCP segment
-       with the ECE bit it reduces its congestion window as for a packet drop. It then acknowledges the congestion
-       indication by sending a segment with the CWR bit set.
+       with the ECE bit it reduces its congestion window as for a packet drop. It then acknowledges the
+       congestion indication by sending a segment with the CWR bit set.
 
-       A node keeps transmitting TCP segments with the ECE bit set until it receives a segment with the CWR bit set. 
+       A node keeps transmitting TCP segments with the ECE bit set until it receives a segment with the CWR bit 
+       set. 
        
   ![slide_10](https://user-images.githubusercontent.com/43876863/47962259-277f8f00-e040-11e8-8156-d7c8879f036a.jpg)
   
@@ -98,8 +99,8 @@
 		   2) Improvement in the throughput of short connections.
 		
 	      While the current ECN specification enables congested routers to mark TCP data packets during 
-	      congestion, this is not the case with TCP control (TCP SYN and SYN ACK) packets.  This is simply because 
-	      these packets are used initially to negotiate the use of ECN options between the two endpoints. 
+	      congestion, this is not the case with TCP control (TCP SYN and SYN ACK) packets.  This is simply 
+	      because these packets are used initially to negotiate the use of ECN options between the two endpoints. 
 	      Using ECN+ We can observe devastating effects that this can have on system performance, particularly
 	      in AQM-enabled environments dominated by web-traffic.Then we explore possibilities of using ECN 
 	      bits in the IP headersof TCP control packets.  We demonstrate that marking (instead of dropping) 
