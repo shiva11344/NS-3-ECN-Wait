@@ -21,6 +21,7 @@
       When both endpoints support ECN they mark their packets with ECT(0) or ECT(1). If the packet traverses an active queue management (AQM) queue (e.g., a queue that uses random early detection (RED)) that is experiencing congestion and the corresponding router supports ECN, it may change the code point to CE instead of dropping the packet. This act is referred to as “marking” and its purpose is to inform the receiving endpoint of impending congestion. At the receiving endpoint, this congestion indication is handled by the upper layer protocol (transport layer protocol) and needs to be echoed back to the transmitting node in order to signal it to reduce its transmission rate.
 
      Because the CE indication can only be handled effectively by an upper layer protocol that supports it, ECN is only used in conjunction with upper layer protocols, such as TCP, that support congestion control and have a method for echoing the CE indication to the transmitting endpoint. 
+     
 
 ### Operation of ECN with TCP
 
@@ -38,6 +39,8 @@
        Upon receiving an IP packet with the Congestion Experienced code point, the TCP receiver echoes back this congestion indication using the ECE flag in the TCP header. When an endpoint receives a TCP segment with the ECE bit it reduces its congestion window as for a packet drop. It then acknowledges the congestion indication by sending a segment with the CWR bit set.
 
        A node keeps transmitting TCP segments with the ECE bit set until it receives a segment with the CWR bit set. 
+       
+  ![slide_10](https://user-images.githubusercontent.com/43876863/47962259-277f8f00-e040-11e8-8156-d7c8879f036a.jpg)
 
  ### WHAT IS ECN+ ??
 
