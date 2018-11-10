@@ -24,3 +24,4 @@
 * created dumbell topology with 5 left nodes 2 routers(with red active queue management) and 5 right nodes
 * enabled ect bit for control packet (SYN_ACK) by writing some snippet in tcp-socketbase.cc (mainly on addsockettags,sendemptypackets) and header file
 * ecn+ is enabled
+* have to check with test suites
