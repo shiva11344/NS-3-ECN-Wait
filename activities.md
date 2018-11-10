@@ -20,3 +20,7 @@
  * enabled pcap and ran a output file on wireshark and got to know about the
     Ip headers and fields in them of every packet.
  * studied tcp-socketbase and noted the places where changes to be done reguarding ECN. 
+
+* created dumbell topology with 5 left nodes 2 routers and 5 right nodes
+* enabled ect bit for control packet (SYN_ACK) by writing some snippet in tcp-socketbase.cc (mainly on addsockettags,sendemptypackets) and header file
+* ecn+ is enabled
