@@ -133,3 +133,23 @@ When we are sending syn-ack from reciever.we mark the syn-ack with our CE using 
    12. We yet need to implement Wait algorithm, That is to make the server wait for a RTT before
              sending its datapackets. i.e., set the state of it to WAIT until an RTT (from ESTIMATERTT( )).
 ### ECN+/WAIT ADVANTAGES:
+   ECN+ explores the costs and benefits of adding ECN-Capability to
+   SYN/ACK packets. The addition of ECN-Capability to SYN/ACK packets could be of significant benefit
+   for those ECN connections that would have had the SYN/ACK packet
+   dropped in the network, and for which the ECN-Capability would allow
+   the SYN/ACK to be marked rather than dropped.
+
+   The percent of SYN/ACK packets on a link can be quite high.  In
+   particular, measurements on links dominated by web traffic indicate
+   that 15-20% of the packets can be SYN/ACK packets.
+   
+   
+   The benefit of adding ECN-Capability to SYN/ACK packets depends in
+   part on the size of the data transfer.  The drop of a SYN/ACK packet
+   can increase the download time of a short file by an order of
+   magnitude, by requiring a three-second retransmission timeout.  For
+   longer-lived flows, the effect of a dropped SYN/ACK packet on file
+   download time is less dramatic.  However, even for longer-lived
+   flows, the addition of ECN-Capability to SYN/ACK packets can improve
+   the fairness among long-lived flows, as newly arriving flows would be
+   less likely to have to wait for retransmission timeouts.
