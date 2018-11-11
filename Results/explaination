@@ -1,3 +1,5 @@
 
 The following folder has the pcap files . 
 These can be viewed in wireshark. pcap-N-2-0 is the pcap for the node where we can observe the packets information.
+* The result.png is the pcap when viewed in wireshark. we can observe each and every detail of the transmitted 
+packet by double clicking the desired packet
