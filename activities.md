@@ -23,5 +23,9 @@
 
 * created dumbell topology with 5 left nodes 2 routers(with red active queue management) and 5 right nodes
 * enabled ect bit for control packet (SYN_ACK) by writing some snippet in tcp-socketbase.cc (mainly on addsockettags,sendemptypackets) and header file
+* marked ce for the syn-ack packet and observed the pcap such that sender enables ECE bit and in return reciever
+  reduces the window size and send the data (in case of downloading).
+* where as in case of uploading there is no need of sending echo since client sends the data and server has nothing
+   to do with it.
 * ecn+ is enabled
 * have to check with test suites
