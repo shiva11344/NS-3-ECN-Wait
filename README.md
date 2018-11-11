@@ -15,3 +15,13 @@
         ● shiva swaroop.v (16CO252)
         ● sanjith geddam  (16CO111)
         ● kunal M         (16CO227)
+
+## How to run the files:
+         
+         * Download the ns3-dev-gitmaster from ns3 repositry of github
+         * extract the folder and build the tools necessary (works on ubuntu 16.04)
+         * copy the following topology into the scratch folder.
+         * copy the tcp-socketbase.cc and tcp-socketbase.h files in the respective locations src/internet/model/
+         * run this with the command "./waf --run <topology-file name>
+         * there will be a results repositry created. pcaps will be stored.open pcap for any node and you can 
+           observe the packets flow from that node.
