@@ -125,13 +125,11 @@ When we are sending syn-ack from reciever.we mark the syn-ack with our CE using 
       std::cout<<"Marking CE bit\n";
        std::cout<< m_tcb->m_ecnState<<"-receiver ecn-state\n" ;
 ```
-   8. In case of Downloading: After Connection is established the ACK is sent with ECHO messages
+   9. In case of Downloading: After Connection is established the ACK is sent with ECHO messages
               when we experienced congestion in SYN-ACK packet.
-          9.  In case of Uploading : After connection is established, The client can send data packets with
-              reduced window size. Sending ECHO messages is not necessary as the server has no
-              contribution of data.
-          10.  Then we can observe in pacp when we get the ACK with ECE set the server sends the data with
-              reduced window size.
-          11.  We yet need to implement Wait algorithm, That is to make the server wait for a RTT before
+   10. In case of Uploading : After connection is established, The client can send data packets with
+       reduced window size. Sending ECHO messages is not necessary as the server has no contribution of data.
+   11. Then we can observe in pacp when we get the ACK with ECE set the server sends the data with reduced window size.
+   12. We yet need to implement Wait algorithm, That is to make the server wait for a RTT before
              sending its datapackets. i.e., set the state of it to WAIT until an RTT (from ESTIMATERTT( )).
 ### ECN+/WAIT ADVANTAGES:
