@@ -1,5 +1,5 @@
 ## ECN+/ WAIT:
-### REFERNCES:
+*  REFERNCES:
            1. RFC 5562 (Link: https://tools.ietf.org/html/rfc5562 )
            2. ECN support for TCP in ns-3 (Link:
               https://www.nsnam.org/docs/models/html/tcp.html#support-for-explicit-
@@ -8,7 +8,8 @@
               kuzmanovic.pdf?ip=218.248.46.107&id=1080100&acc=PUBLIC&key=045416EF4DDA69D9
               %2E4A4590D5C9BCB165%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&__acm__=154193489
               9_2f78bd63fdd21f83bdb011453bd6d979
-### DIFFERENCES BETWEEN ECN AND ECN+:
+              
+* DIFFERENCES BETWEEN ECN AND ECN+:
  
            ECN specification enables congested routers to mark TCP data packets during congestion, this is not
            the case with TCP control (TCP SYN and SYN ACK) packets. This is simply because these packets are
@@ -16,13 +17,25 @@
            devastating effects on system performance, particularly in AQM-enabled environments dominated
            by web-traffic. So, This is where ECN+ is different from ECN. Negotiation packets (Control packets)
            are also involved in marking.
-### APPROACH:
+           
+* APPROACH:
           * To simulate our concept first and necessary thing we need is a topology with nodes and
              routers
           * Tcp-BulkSend Application is to be installed on the nodes in order to create web-traffic
               between the nodes. To enable ECN, our Routers must follow ACTIVE QUEUE MANAGEMENT.
               So, set the Routers to RED AQM.
-              
+                 ```
+                 InstallBulkSend (leftNodes.Get (0), routerToRightIPAddress [0].GetAddress (1), port, 2, 0, 
+                 MakeCallback   (&CwndChangeA));
+                 InstallBulkSend (leftNodes.Get (1), routerToRightIPAddress [1].GetAddress (1), port, 3, 0, 
+                 MakeCallback (&CwndChangeB));
+                 InstallBulkSend (leftNodes.Get (2), routerToRightIPAddress [2].GetAddress (1), port, 4, 0, 
+                  MakeCallback (&CwndChangeC));
+                 InstallBulkSend (leftNodes.Get (3), routerToRightIPAddress [3].GetAddress (1), port, 5, 0, 
+                 MakeCallback (&CwndChangeD));
+                 InstallBulkSend (leftNodes.Get (4), routerToRightIPAddress [4].GetAddress (1), port, 6, 0, 
+                 MakeCallback (&CwndChangeE));
+                 ```  
               
           * Pcap has to be enabled in our topology.cc to observe the packet specifications i.e., number of
               packets, the flags enabled in those packets etc..
